@@ -15,7 +15,7 @@ All in one, batteries included, single-container implementation of a full Mautic
 - Mariadb 11.4 LTS
 - Apache 2.4
 - PHP 8.3-FPM
-- Mautic 5.2.2
+- Mautic 5.2.6 and Mautic 6.0.2
 
 Follows KISS principles from the perspective of the person deploying the container, which increases the complexity of the Dockerfile itself. The Dockerfile is extremely verbose and not optimized for speed/size, this is intentional, so anyone can easily modify it.
 

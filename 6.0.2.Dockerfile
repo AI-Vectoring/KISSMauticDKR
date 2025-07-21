@@ -6,7 +6,7 @@
 #  |_|\_\___|____/____/|_| |_| |_|\__,_|\__,_|\__|_|\___|____/|_|\_\_| \_\
 #
 #
-#      Pull & Play, extremely verbose, KISS Dockerfile for Mautic 5.2.2
+#      Pull & Play, extremely verbose, KISS Dockerfile for Mautic 5.2.6 and 6.0.2
 #
 # This Dockerfile concentrates on simplicity and convenience for the person deploying the image,
 # as well as clarity and verboseness for those wanting to understand what is going in the container.
