@@ -1,0 +1,45 @@
+On the email: is the plan that credentials go to your server through the existing report call, and you forward them? Yes, but this means we need to have a working Mautic instance running for this.
+
+
+Check if apache, mariaDB and every other servicesa restart properly.
+
+
+
+
+
+
+# ToDo:
+
+# Parametrize PFP-FPM version in all files.
+
+# Use Supervisord
+# Add a mautic specific healthcheck with a curl call to the API.
+# curl -f http://localhost/api/contacts?search=!is:anonymous&limit=1
+
+#echo "         Does your DNS A record point at the IP of this server?"
+#DIG_DOMAIN="$(dig +short $MAUTIC_DOMAIN | grep '^[.0-9]*$')"
+#echo "         The DNS A record for" $MAUTIC_DOMAIN "points to the IP:"  $DIG_DOMAIN
+#LOCAL_IP="$(curl -s ipinfo.io | grep -Po 'ip[^0-9]*"\K[^"]*')"
+#echo "         This server's IP is: "$LOCAL_IP
+
+#Finish the SSL cert script.
+
+#Install SES plugin
+#cd /path/to/your/mautic/plugins
+#git clone https://github.com/yourusername/mautic-aws-ses-plugin.git AmazonSesBundle
+#php /path/to/mautic/bin/console cache:clear
+#https://github.com/pm-pmaas/etailors_amazon_ses?utm_source=email&utm_medium=mautic&utm_campaign=week42
+
+
+# Point the file downloads to the github repo instead of the file server.
+
+
+
+
+
+see what is needed exactly:
+/home/yosu/git/_archive/_mautic/KISSmauticDKR/assets/7.2.2/mautic-7.2.2-local.php
+/home/yosu/git/_archive/_mautic/KISSmauticDKR/assets/7.2.2/local.php
+Does the short file work just the same?
+
+

@@ -11,11 +11,11 @@
 All in one, batteries included, single-container implementation of a full Mautic server.
 
 "Latest" currently includes:
-- Debian 12-slim
-- Mariadb 11.4 LTS
+- Debian 13-slim (Trixie)
+- Mariadb 11.8 LTS
 - Apache 2.4
-- PHP 8.3-FPM
-- Mautic 5.2.6 and Mautic 6.0.2
+- PHP 8.4-FPM
+- Mautic 5.2.6, Mautic 6.0.2 and Mautic 7.2.2
 
 Follows KISS principles from the perspective of the person deploying the container, which increases the complexity of the Dockerfile itself. The Dockerfile is extremely verbose and not optimized for speed/size, this is intentional, so anyone can easily modify it.
 
@@ -60,13 +60,18 @@ docker run -d --name KISSmauticDKR -p 8080:80 martechws/kiss-mautic:latest
 
 Use your browser to navigate to http://localhost:8080
 
+Default login for the 7.2.2 image: **admin / ChangeMeRightNow!**
+
 To login into the container:
 
 docker exec -ti KISSmauticDKR bash
 
 Build locally:
 
-git clone Martech-WorkShop/KISSMauticDKR docker build -f 521.Dockerfile . -t KISSmauticDKR:5.2.1 docker run -d --name KISSmauticDKR -p 8080:80 martechws/kiss-mautic:5.2.1 docker exec -ti KISSmauticDKR bash
+git clone https://github.com/Martech-WorkShop/KISSMauticDKR
+docker build -f 7.2.2.Dockerfile . -t KISSmauticDKR:7.2.2
+docker run -d --name KISSmauticDKR-722 -p 8080:80 KISSmauticDKR:7.2.2
+docker exec -ti KISSmauticDKR-722 bash
 
 ## Intended uses: 
  - A simple way to test Mautic, pull & play.
@@ -74,7 +79,13 @@ git clone Martech-WorkShop/KISSMauticDKR docker build -f 521.Dockerfile . -t KIS
  - A starting point for Mautic code exploration and tinkering.
  - A way to learn about Dockerization, Dockerfiles and Docker image creation.
 
-It is NOT meant as a production ready image.
+This image is used in production (a Swarm cluster behind a Traefik proxy that
+terminates TLS), so it is maintained accordingly: services restart cleanly, the
+database and uploads can be persisted on volumes, and a healthcheck is built in.
+
+It is not hardened out of the box. Review the default credentials, the
+`trusted_proxies` setting and the exposed port before putting it on a public
+host — see `7.2.2-NOTES.md` for what each of those does.
 
 If you have any ideas how to make it clearer or simpler, please send me an email, submit a PR or an Issue.
 
