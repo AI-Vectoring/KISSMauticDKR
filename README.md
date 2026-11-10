@@ -20,9 +20,9 @@ All in one, batteries included, single-container implementation of a full Mautic
 Follows KISS principles from the perspective of the person deploying the container, which increases the complexity of the Dockerfile itself. The Dockerfile is extremely verbose and not optimized for speed/size, this is intentional, so anyone can easily modify it.
 
 Here is the GitHub repo with the Dockerfile and other scripts used to build the image:
-- https://github.com/Martech-WorkShop/KISSMauticDKR
+- https://github.com/AI-Vectoring/KISSMauticDKR
 
-It also uses configuration files and scripts from the toolBelt, found at: https://github.com/Martech-WorkShop/toolBelt⁠martech.ws⁠
+It also uses configuration files and scripts from the toolBelt, found at: https://github.com/AI-Vectoring/toolBelt⁠martech.ws⁠
 Martech-WorkShop Check the blog for articles and news: https://martech.ws
 ⁠as well as the Martech WorkShop YouTube channel: https://www.youtube.com
 @MartechWorkShop⁠ ⁠ github@martech.ws
@@ -68,8 +68,8 @@ docker exec -ti KISSmauticDKR bash
 
 Build locally:
 
-git clone https://github.com/Martech-WorkShop/KISSMauticDKR
-docker build -f 7.2.2.Dockerfile . -t KISSmauticDKR:7.2.2
+git clone https://github.com/AI-Vectoring/KISSMauticDKR
+docker build -f dockerfile/7.2.2.Dockerfile . -t KISSmauticDKR:7.2.2
 docker run -d --name KISSmauticDKR-722 -p 8080:80 KISSmauticDKR:7.2.2
 docker exec -ti KISSmauticDKR-722 bash
 
@@ -97,7 +97,7 @@ This particular Dockerfile is intended for documentation.
 There is a properly optimized verion of this dockerfile without comments and with RUN commands grouped.
 
 All the files for this dockerfile are on this GitHub repository:
-https://github.com/Martech-WorkShop/toolBelt
+https://github.com/AI-Vectoring/toolBelt
 
 ## Contributors:
 We need help extending the KISS---DKR goodness to other projects, bringing simplicity to instaling and managing open-martech software.
